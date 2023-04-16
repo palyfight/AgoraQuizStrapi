@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "themes",
+  "info": {
+    "singularName": "theme",
+    "pluralName": "themes",
+    "displayName": "Theme",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": false
+    },
+    "photo": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "triviaDate": {
+      "type": "date"
+    },
+    "availableDate": {
+      "type": "date"
+    },
+    "unavailableDate": {
+      "type": "date"
+    },
+    "ranking": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::ranking.ranking",
+      "mappedBy": "theme"
+    }
+  }
+}
